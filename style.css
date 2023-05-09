@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/*-------------------------------
+Purpose: Main CSS File
+Version: 0.1
+Author: Spenser Wellen
+Date: 07/09/2020
+Last Update: 08/04/2020
+-------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
+/* -------------------------------------------*/
+/* FONT COLORING SETUP */
+/* -------------------------------------------*/
+body {
+  background-size: cover;
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+html, body {
+  text-align: center;
+  font: normal 100%/1.5 Rowdies, sans-serif;
+  height: 100vh;
+  overflow: auto;
+}
+
+#page {
+  -webkit-transition: background-image 3.2s ease-in-out;
+  transition: background-image 3.2s ease-in-out;
+}
+
+.animated {
+  transition: all 1750ms ease;
+}
+
+h1 {
+  color: #121212;
+}
+
+.title {
+  background-color: #e4e3dc;
+  text-decoration: none;
+  opacity: 0.7;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-radius: 1rem;
+  box-shadow: 2.95rem 2.95rem 2.95rem 2.95rem rgba(0, 0, 0, 0.08), 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.titled {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(228, 227, 220, 0.68)), to(#faf6f5)), url(https://jooinn.com/images/wrinkled-paper-texture.jpg);
+  text-decoration: none;
+  opacity: 0.7;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-radius: 1rem;
+  box-shadow: 2.95rem 2.95rem 2.95rem 2.95rem rgba(0, 0, 0, 0.08), 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+blockquote, p, cite {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-style: bold;
+}
+
+cite {
+  font-weight: bold;
+  animation: word-animation 4s ease-out backwards !important;
+}
+
+a, a:visited {
+  display: inline-block;
+  padding: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  color: #8aa651;
+}
+
+/**
+ * Layout
+ */
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 25vh;
+}
+
+.page-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/** 
+ * Button
+ */
+.button {
+  display: inline-block;
+  background: none;
+  border: 0;
+  font: 300 81.25%/1 Rowdies, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  padding: 1rem 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #ccc;
+  color: #e4e3dc;
+  border-radius: 2rem;
+  box-shadow: 2.95rem 2.95rem 2.95rem 2.95rem rgba(0, 0, 0, 0.08), 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.button.new-quote {
+  font-weight: 800;
+  background-color: #121212;
+  color: #e4e3dc;
+}
+
+.button.tweet {
+  font-weight: 800;
+  position: relative;
+  background-color: #121212;
+  color: #e4e3dc;
+  padding-left: 48px;
+}
+
+.button.tweet > .icon {
+  width: 18px;
+  position: absolute;
+  left: 16px;
+  top: 13px;
+  color: #e4e3dc;
+}
+
+/**
+ * Quote Component
+ */
+.quote {
+  margin-top: calc(40vh - 150px);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65vw;
+  color: gray;
+  quotes: "“" "”" "‘" "’";
+  padding: 0.5rem;
+  padding-left: 0.9375rem;
+}
+
+quote p {
+  position: relative;
+}
+
+.quote__body {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 140%;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+#quotebody {
+  animation: word-animation 1.2s ease-in-out forwards;
+}
+
+.quote__body::before {
+  font-size: 240%;
+  font-family: Georgia, serif;
+  line-height: 1.5rem;
+  content: open-quote;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 0.3em;
+  left: -0.08em;
+}
+
+.quote__body::after {
+  font-size: 240%;
+  font-family: Georgia, serif;
+  line-height: 1.5rem;
+  content: close-quote;
+  posotion: relative;
+  top: -300px;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 0.3em;
+  left: 0em;
+}
+
+.quote__cite {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 112.5%;
+  letter-spacing: 0.085em;
+}
+
+#myquote {
+  color: #2b2b2b;
+}
+
+#credits {
+  width: 450px;
+  text-align: center !important;
+  display: block;
+  margin: 0.5rem auto 100px auto;
+  font-size: 0.8em;
+  color: #433737;
+}
+#credits a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#name, .by {
+  font-size: 0.8rem;
+  color: #121212;
+  background-color: #e4e3dc;
+  text-decoration: none;
+  opacity: 0.7;
+  padding: 0.25rem;
+  border-radius: 0.3rem;
+  box-shadow: 2.95rem 2.95rem 2.95rem 2.95rem rgba(0, 0, 0, 0.08), 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.by {
+  font-weight: 510;
+}
+
+/**
+ * Animations
+ */
+@keyframes main-text-animation {
+  0% {
+    letter-spacing: 25vw;
+    word-spacing: 100vw;
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: 4px;
+    word-spacing: 1vw;
+    opacity: 1;
+  }
+}
+@keyframes word-animation {
+  0% {
+    top: 10vw;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes loadIn {
+  0% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/**
+ * Media Queries
+ */
+@media screen and (min-width: 650px) {
+  .page {
+    padding-top: 0.5rem;
+  }
+
+  .quote::before {
+    font-size: 100px;
+    line-height: 4rem;
+  }
+
+  .quote__body {
+    font-size: 185%;
+    margin-bottom: 1rem;
+  }
+
+  .quote__cite {
+    font-size: 115%;
+  }
+
+  #credits {
+    margin-right: 40vw;
+    margin-left: 60vw;
+  }
+}
+@media screen and (max-width: 650px) {
+  .quote {
+    margin-top: 8vh;
+    max-width: 95vw;
+  }
+
+  h1 {
+    font-size: 150%;
+  }
+
+  html, body {
+    overflow: scroll;
+  }
+
+  main {
+    margin-bottom: 20vh;
+  }
+
+  .container {
+    margin-top: 14vh;
+  }
+}
